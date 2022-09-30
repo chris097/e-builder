@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Resume from './pages';
 
 function App() {
   return (
-    <div className="text-center">
-      do something here...
+    <div>
+      <Resume />
     </div>
   );
 }
