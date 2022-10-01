@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Resume from './pages';
+import Resume from './pages/resume';
+
 
 function App() {
   return (
