@@ -11,7 +11,7 @@ const Input:React.FC<Props> = (props) => {
           <div>
             <label className="text-basegray text-sm" htmlFor={props.label}>{props.label}</label>
           </div>
-          <input className="border w-full h-10 px-3 mt-1 focus:outline-none border-gray-300" {...props.input} />
+          <input className="border w-full h-10 px-3 mt-1 focus:outline-none text-basegray text-sm border-gray-300" {...props.input} />
     </div>
   )
 }
