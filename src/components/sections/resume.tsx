@@ -24,10 +24,10 @@ const ResumeSection = () => {
               <div><HiPencil size="16px" /></div>
               <div>Technical Skills</div>
             </Link>
-            <div className='text-sm font-light hover:text-red-500 cursor-pointer flex space-x-2'>
+            <Link to="/education" className='text-sm font-light hover:text-red-500 cursor-pointer flex space-x-2'>
               <div><FaGraduationCap size="16px" /></div>
               <div>Education</div>
-            </div>
+            </Link>
             <div className='text-sm font-light hover:text-red-500 cursor-pointer flex space-x-2'>
               <div><BsFillAwardFill size="16px"  /></div>
               <div>{`Certification & Hobbies`}</div>
