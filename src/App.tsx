@@ -4,6 +4,7 @@ import './App.css';
 import Education from './pages/education';
 import ProfessionalSummary from './pages/professionalSummary';
 import Resume from './pages/resume';
+import TechnicalSkills from './pages/technicalSkills';
 import WorkHistory from './pages/workHistory';
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/professional-summary' element={<ProfessionalSummary />} />
         <Route path='/work-history' element={<WorkHistory />} />
         <Route path='/education' element={<Education />} />
+        <Route path='/technical-skill' element={<TechnicalSkills />} />
       </Routes>
     </Router>
   );
