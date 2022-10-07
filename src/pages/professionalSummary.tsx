@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/header';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
 import { BsPlusLg } from 'react-icons/bs';
 import Input from '../components/input';
+import { useNavigate } from 'react-router-dom';
 
 const ProfessionalSummary = () => {
+
+    const navigate = useNavigate();
+
+    const [toggleAdditioanlLink, setToggleAdditionalLink] = useState(false)
+
+    const [additionalLink, setAdditionalLink] = useState(new Map())
+
+    console.log(additionalLink.set('1', 'hello'))
+
+
   return (
     <div>
           <Header />
           <div className='max-w-5xl mx-auto w-full my-8'>
-            <div className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></div>
+            <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
               <div className='max-w-4xl mx-auto'>
                 <div className='font-light text-blue-700'>Professional Summary</div>
                 <div className='font-light text-basegray mb-8 my-3'>We suggest including an email and phone number.</div>
