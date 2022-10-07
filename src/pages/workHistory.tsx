@@ -3,13 +3,17 @@ import Input from '../components/input';
 import Header from '../components/header';
 import { BsPlusLg } from 'react-icons/bs';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const WorkHistory = () => {
+
+  const navigate = useNavigate();
+
   return (
     <>
      <Header />
           <div className='max-w-5xl mx-auto w-full my-8'>
-            <div className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></div>
+            <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
               <div className='max-w-4xl mx-auto'>
                 <div className='font-light text-blue-700'>Work History</div>
                 <div className='font-light text-basegray mb-8 my-3'>We suggest including an email and phone number.</div>
