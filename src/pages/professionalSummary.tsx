@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/header';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
 import { BsPlusLg } from 'react-icons/bs';
 import Input from '../components/input';
 import { useNavigate } from 'react-router-dom';
+import { generateCharacters } from '../utils';
+import AdditionalField from '../components/AdditionalField';
 
 const ProfessionalSummary = () => {
 
@@ -11,10 +13,25 @@ const ProfessionalSummary = () => {
 
     const [toggleAdditioanlLink, setToggleAdditionalLink] = useState(false)
 
-    const [additionalLink, setAdditionalLink] = useState(new Map())
+    const [additionalLink, setAdditionalLink] = useState<any>(new Map())
 
-    console.log(additionalLink.set('1', 'hello'))
+    const handleAdditionalLink = () => {
+        const link = new Map(additionalLink)
+        link.set(generateCharacters(10), "")
+        setAdditionalLink(link)
+    };
 
+    const handleRemoveAdditionalLink = (key:any) => {
+        const link = new Map(additionalLink)
+        link.delete(key)
+        setAdditionalLink(link)
+    }
+
+    const linkLength = [...additionalLink.keys()].length;
+
+    useEffect(() => {
+        handleAdditionalLink()
+    },[])
 
   return (
     <div>
@@ -97,25 +114,22 @@ const ProfessionalSummary = () => {
                     />
                   </div>
                   <div className='mt-7'>
-                      <div className='flex space-x-1 items-center text-sm text-blue-500 cursor-pointer'>
+                      <button type='submit' onClick={() => setToggleAdditionalLink(open => !open)} className='flex space-x-1 items-center text-sm text-blue-500 cursor-pointer'>
                         <BsPlusLg />
                           <div>Add Scoial Links</div>
-                      </div>
-                      <div className='flex space-x-4 mt-4 items-center'>
-                              <div className='w-full'>
-                                  <select className='border text-sm text-basegray w-full h-10 px-3 mt-1 focus:outline-none border-gray-300'>
-                                      <option value="">Twitter</option>
-                                      <option value="">LinkedIn</option>
-                                      <option value="">Website</option>
-                                  </select>
-                              </div>
-                              <Input />
-                              <div className='text-basegray cursor-pointer'><MdDelete size="20px" /></div>
-                      </div>
-                      <div className='flex space-x-1 items-center mt-4 text-sm text-blue-500 cursor-pointer'>
+                      </button>
+                      {toggleAdditioanlLink && [[...additionalLink.keys()].map((field, index) => (
+                        <AdditionalField
+                            key={field}
+                              field={field}
+                              fieldLength={index}
+                              handleRemoveAdditionalLink={handleRemoveAdditionalLink}
+                        />
+                      ))]}
+                      {toggleAdditioanlLink && <button disabled={linkLength >= 3} onClick={handleAdditionalLink} className={`flex space-x-1 items-center mt-4 text-sm ${linkLength >= 3 ? "text-gray-300" : "text-blue-500"} cursor-pointer`}>
                         <BsPlusLg />
-                          <div>Add one more</div>
-                      </div>
+                          <span>Add one more</span>
+                      </button>}
                   </div>
                   <div className='flex justify-between mt-16 font-light'>
                       <button type='button' className='border w-32 h-10'>Back</button>
