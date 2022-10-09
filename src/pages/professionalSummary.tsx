@@ -6,6 +6,7 @@ import Input from '../components/input';
 import { useNavigate } from 'react-router-dom';
 import { generateCharacters } from '../utils';
 import AdditionalField from '../components/AdditionalField';
+import { useFormik } from 'formik';
 
 const ProfessionalSummary = () => {
 
@@ -31,7 +32,23 @@ const ProfessionalSummary = () => {
 
     useEffect(() => {
         handleAdditionalLink()
-    },[])
+    }, []);
+
+    const formik = useFormik({
+        initialValues: {
+            firstName: "",
+            lastName: "",
+            profession: "",
+            city: "",
+            state: "",
+            country: "",
+            email: "",
+            phoneNumber: ""
+        },
+        onSubmit: values => {
+            console.log(values)
+        }
+    })
 
   return (
     <div>
@@ -40,22 +57,23 @@ const ProfessionalSummary = () => {
             <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
               <div className='max-w-4xl mx-auto'>
                 <div className='font-light text-blue-700'>Professional Summary</div>
-                <div className='font-light text-basegray mb-8 my-3'>We suggest including an email and phone number.</div>
+                  <div className='font-light text-basegray mb-8 my-3'>We suggest including an email and phone number.</div>
+                  <form onSubmit={formik.handleSubmit}>
                   <div className='flex space-x-4'>
                     <Input
                         label='First Name'
                         input={{
-                            name: "firstName",
                             type: 'text',
-                            id: "firstName"
+                            id: "firstName",
+                            ...formik.getFieldProps('firstName')
                         }}
                     />
                     <Input
                         label='Last Name'
                         input={{
-                            name: "lastName",
                             type: 'text',
-                            id: "lastName"
+                            id: "lastName",
+                            ...formik.getFieldProps('lastName')
                         }}
                     />
                   </div>
@@ -63,9 +81,9 @@ const ProfessionalSummary = () => {
                       <Input
                         label='Profession'
                         input={{
-                            name: "lastName",
                             type: 'text',
-                            id: "lastName"
+                            id: "profession",
+                            ...formik.getFieldProps('profession')
                         }}
                     />
                   </div>
@@ -73,25 +91,25 @@ const ProfessionalSummary = () => {
                     <Input
                         label='City'
                         input={{
-                            name: "firstName",
                             type: 'text',
-                            id: "firstName"
+                            id: "city",
+                            ...formik.getFieldProps('city')
                         }}
                     />
                     <Input
                         label='State'
                         input={{
-                            name: "country",
                             type: 'text',
-                            id: "lastName"
+                            id: "state",
+                            ...formik.getFieldProps('state')
                         }}
                     />
                     <Input
                         label='Country'
                         input={{
-                            name: "country",
                             type: 'text',
-                            id: "lastName"
+                            id: "country",
+                            ...formik.getFieldProps('country')
                         }}
                     />
                   </div>
@@ -99,17 +117,17 @@ const ProfessionalSummary = () => {
                     <Input
                         label='Email'
                         input={{
-                            name: "firstName",
+                            id: "email",
                             type: 'text',
-                            id: "firstName"
+                            ...formik.getFieldProps('email')
                         }}
                     />
                     <Input
                         label='Phone Number'
                         input={{
-                            name: "country",
                             type: 'text',
-                            id: "lastName"
+                            id: "phoneNumber",
+                            ...formik.getFieldProps('phoneNumber')
                         }}
                     />
                   </div>
@@ -123,6 +141,8 @@ const ProfessionalSummary = () => {
                             key={field}
                               field={field}
                               fieldLength={index}
+                              handleSelect={formik.handleChange}
+                              handleInput={formik.handleChange}
                               handleRemoveAdditionalLink={handleRemoveAdditionalLink}
                         />
                       ))]}
@@ -133,9 +153,11 @@ const ProfessionalSummary = () => {
                   </div>
                   <div className='flex justify-between mt-16 font-light'>
                       <button type='button' className='border w-32 h-10'>Back</button>
-                      <button className='bg-red-500 hover:bg-red-700 text-white w-32 h-10'>{`Save & Next`}</button>
-                  </div>
+                      <button type='submit' className='bg-red-500 hover:bg-red-700 text-white w-32 h-10'>{`Save & Next`}</button>
+                      </div>
+                </form>
               </div>
+              
           </div>
     </div>
   )
