@@ -9,6 +9,9 @@ type Props = {
     value?: any
     handleInput?: any
     handleSelect?: any
+    twitter?: string
+    linkedIn?: string
+    website?: string
 }
 
 const AdditionalField:React.FC<Props> = (props) => {
@@ -16,9 +19,9 @@ const AdditionalField:React.FC<Props> = (props) => {
     <div className='flex space-x-4 mt-4 items-center'>
         <div className='w-full'>
             <select onChange={props.handleSelect} className='border text-sm text-basegray w-full h-10 px-3 mt-1 focus:outline-none border-gray-300'>
-                <option value="twitter">Twitter</option>
-                <option value="linkedIn">LinkedIn</option>
-                <option value="website">Website</option>
+                <option value={props.twitter}>Twitter</option>
+                <option value={props.linkedIn}>LinkedIn</option>
+                <option value={props.website}>Website</option>
             </select>
         </div>
             <Input

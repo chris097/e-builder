@@ -12,8 +12,10 @@ const ProfessionalSummary = () => {
 
     const navigate = useNavigate();
 
+    const [twitter, setTwitter] = useState("");
+    const [linkedIn, setLinkedIn] = useState("");
+    const [website, setWebsite] = useState("")
     const [toggleAdditioanlLink, setToggleAdditionalLink] = useState(false)
-
     const [additionalLink, setAdditionalLink] = useState<any>(new Map())
 
     const handleAdditionalLink = () => {
@@ -30,6 +32,12 @@ const ProfessionalSummary = () => {
 
     const linkLength = [...additionalLink.keys()].length;
 
+    const handleSelect = (e:any) => {
+        setTwitter(e.target.value);
+        setLinkedIn(e.target.value);
+        setWebsite(e.target.value)
+    }
+
     useEffect(() => {
         handleAdditionalLink()
     }, []);
@@ -43,12 +51,17 @@ const ProfessionalSummary = () => {
             state: "",
             country: "",
             email: "",
-            phoneNumber: ""
+            phoneNumber: "",
         },
         onSubmit: values => {
-            console.log(values)
+            console.log({
+                twitter: twitter,
+                website: website,
+                linkedIn: linkedIn,
+                ...values
+            })
         }
-    })
+    });
 
   return (
     <div>
@@ -141,7 +154,10 @@ const ProfessionalSummary = () => {
                             key={field}
                               field={field}
                               fieldLength={index}
-                              handleSelect={formik.handleChange}
+                              twitter={twitter}
+                              linkedIn={linkedIn}
+                              website={website}
+                              handleSelect={handleSelect}
                               handleInput={formik.handleChange}
                               handleRemoveAdditionalLink={handleRemoveAdditionalLink}
                         />
