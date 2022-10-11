@@ -11,10 +11,6 @@ import { useFormik } from 'formik';
 const ProfessionalSummary = () => {
 
     const navigate = useNavigate();
-
-    const [twitter, setTwitter] = useState("");
-    const [linkedIn, setLinkedIn] = useState("");
-    const [website, setWebsite] = useState("")
     const [toggleAdditioanlLink, setToggleAdditionalLink] = useState(false)
     const [additionalLink, setAdditionalLink] = useState<any>(new Map())
 
@@ -32,11 +28,11 @@ const ProfessionalSummary = () => {
 
     const linkLength = [...additionalLink.keys()].length;
 
-    const handleSelect = (e:any) => {
-        setTwitter(e.target.value);
-        setLinkedIn(e.target.value);
-        setWebsite(e.target.value)
-    }
+    // const handleSelect = (e:any) => {
+    //     setTwitter(e.target.value);
+    //     setLinkedIn(e.target.value);
+    //     setWebsite(e.target.value)
+    // }
 
     useEffect(() => {
         handleAdditionalLink()
@@ -55,9 +51,9 @@ const ProfessionalSummary = () => {
         },
         onSubmit: values => {
             console.log({
-                twitter: twitter,
-                website: website,
-                linkedIn: linkedIn,
+                // twitter: twitter,
+                // website: website,
+                // linkedIn: linkedIn,
                 ...values
             })
         }
@@ -154,10 +150,10 @@ const ProfessionalSummary = () => {
                             key={field}
                               field={field}
                               fieldLength={index}
-                              twitter={twitter}
-                              linkedIn={linkedIn}
-                              website={website}
-                              handleSelect={handleSelect}
+                            //   twitter={twitter}
+                            //   linkedIn={linkedIn}
+                            //   website={website}
+                            //   handleSelect={handleSelect}
                               handleInput={formik.handleChange}
                               handleRemoveAdditionalLink={handleRemoveAdditionalLink}
                         />
