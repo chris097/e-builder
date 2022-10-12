@@ -16,14 +16,7 @@ type Props = {
 
 const AdditionalField:React.FC<Props> = (props) => {
   return (
-    <div className='flex space-x-4 mt-4 items-center'>
-        <div className='w-full'>
-            <select onChange={props.handleSelect} className='border text-sm text-basegray w-full h-10 px-3 mt-1 focus:outline-none border-gray-300'>
-                <option value={props.twitter}>Twitter</option>
-                <option value={props.linkedIn}>LinkedIn</option>
-                <option value={props.website}>Website</option>
-            </select>
-        </div>
+    <div className='flex space-x-4 items-center w-full'>
             <Input
                 input={{
                   id: props.field,
