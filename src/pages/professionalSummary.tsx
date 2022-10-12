@@ -48,12 +48,12 @@ const ProfessionalSummary = () => {
             country: "",
             email: "",
             phoneNumber: "",
+            twitter: "Twitter",
+            linkedIn: "LinkedIn",
+            website: "Website"
         },
         onSubmit: values => {
             console.log({
-                // twitter: twitter,
-                // website: website,
-                // linkedIn: linkedIn,
                 ...values
             })
         }
@@ -145,18 +145,23 @@ const ProfessionalSummary = () => {
                         <BsPlusLg />
                           <div>Add Scoial Links</div>
                       </button>
-                      {toggleAdditioanlLink && [[...additionalLink.keys()].map((field, index) => (
+                          {toggleAdditioanlLink && [[...additionalLink.keys()].map((field, index) => (
+                          <div className='flex space-x-4 mt-4 items-center'>
+                            <div className='w-full'>
+                                <select onChange={formik.handleChange} className='border text-sm text-basegray w-full h-10 px-3 mt-1 focus:outline-none border-gray-300'>
+                                    <option value={formik.values.twitter}>Twitter</option>
+                                    <option value={formik.values.linkedIn}>LinkedIn</option>
+                                    <option value={formik.values.website}>Website</option>
+                                </select>
+                            </div>
                         <AdditionalField
                             key={field}
                               field={field}
                               fieldLength={index}
-                            //   twitter={twitter}
-                            //   linkedIn={linkedIn}
-                            //   website={website}
-                            //   handleSelect={handleSelect}
                               handleInput={formik.handleChange}
                               handleRemoveAdditionalLink={handleRemoveAdditionalLink}
                         />
+                                  </div>
                       ))]}
                       {toggleAdditioanlLink && <button disabled={linkLength >= 3} onClick={handleAdditionalLink} className={`flex space-x-1 items-center mt-4 text-sm ${linkLength >= 3 ? "text-gray-300" : "text-blue-500"} cursor-pointer`}>
                         <BsPlusLg />
