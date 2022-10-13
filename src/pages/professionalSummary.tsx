@@ -16,7 +16,9 @@ const ProfessionalSummary = () => {
 
     const handleAdditionalLink = () => {
         const link = new Map(additionalLink)
-        link.set(generateCharacters(10), "")
+        link.set('twitter', "eeee")
+        link.set('linkedin', "")
+        link.set('website', "")
         setAdditionalLink(link)
     };
 
@@ -27,12 +29,6 @@ const ProfessionalSummary = () => {
     }
 
     const linkLength = [...additionalLink.keys()].length;
-
-    // const handleSelect = (e:any) => {
-    //     setTwitter(e.target.value);
-    //     setLinkedIn(e.target.value);
-    //     setWebsite(e.target.value)
-    // }
 
     useEffect(() => {
         handleAdditionalLink()
@@ -48,9 +44,9 @@ const ProfessionalSummary = () => {
             country: "",
             email: "",
             phoneNumber: "",
-            twitter: "Twitter",
-            linkedIn: "LinkedIn",
-            website: "Website"
+            twitter: "",
+            linkedIn: "",
+            website: ""
         },
         onSubmit: values => {
             console.log({
@@ -148,11 +144,12 @@ const ProfessionalSummary = () => {
                           {toggleAdditioanlLink && [[...additionalLink.keys()].map((field, index) => (
                           <div className='flex space-x-4 mt-4 items-center'>
                             <div className='w-full'>
-                                <select onChange={formik.handleChange} className='border text-sm text-basegray w-full h-10 px-3 mt-1 focus:outline-none border-gray-300'>
-                                    <option value={formik.values.twitter}>Twitter</option>
-                                    <option value={formik.values.linkedIn}>LinkedIn</option>
-                                    <option value={formik.values.website}>Website</option>
-                                </select>
+                                <Input
+                                    input={{
+                                        type:"text",
+                                        placeholder: "linkedin, twitter, website"
+                                    }}     
+                                />
                             </div>
                         <AdditionalField
                             key={field}
@@ -161,7 +158,7 @@ const ProfessionalSummary = () => {
                               handleInput={formik.handleChange}
                               handleRemoveAdditionalLink={handleRemoveAdditionalLink}
                         />
-                                  </div>
+                        </div>
                       ))]}
                       {toggleAdditioanlLink && <button disabled={linkLength >= 3} onClick={handleAdditionalLink} className={`flex space-x-1 items-center mt-4 text-sm ${linkLength >= 3 ? "text-gray-300" : "text-blue-500"} cursor-pointer`}>
                         <BsPlusLg />
