@@ -16,13 +16,14 @@ type Props = {
 
 const AdditionalField:React.FC<Props> = (props) => {
   return (
-    <div className='flex space-x-4 items-center w-full'>
+      <div className='flex space-x-4 items-center w-full'>
             <Input
                 input={{
                   id: props.field,
                   type: 'text',
                   name: props.field,
                   value: props.value,
+                  placeholder: 'https://twitter.com/chris_chiemela',
                   onChange: props.handleInput
                 }}
             />
