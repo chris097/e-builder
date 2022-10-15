@@ -8,13 +8,14 @@ import Range from '../../public/svgs/range'
 import Twitter from '../../public/svgs/twitter'
 import About from './about'
 
-const Template = () => {
+
+const Template = React.forwardRef((props, ref:any) => {
   return (
-    <div className='bg-primarygray h-auto rounded-md w-full px-6 py-8'>
+    <div ref={ref} className='bg-primarygray h-auto rounded-md w-full px-6 py-8'>
       <About />
       <div className='flex space-x-4 w-full mt-4'>
         <div className='flex-1 bg-white rounded-md h-auto px-6 py-7'>
-          <div className='font-medium text-xl mb-5'>WORK HISTORY</div>
+          <div id="pdf" className='font-medium text-xl mb-5'>WORK HISTORY</div>
           <div className='mb-6 border-b border-gray-100 pb-6'>
             <div className='text-secondarygray'>Product Designer | Flipex, Nigeria</div>
             <div className='text-secondarygray font-light text-sm'>September 2022 - Present</div>
@@ -142,6 +143,6 @@ const Template = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Template
