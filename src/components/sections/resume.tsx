@@ -5,7 +5,11 @@ import { FaGraduationCap, FaDownload } from 'react-icons/fa';
 import { BsFillAwardFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-const ResumeSection = () => {
+type Props = {
+  handlePrint?: any
+};
+
+const ResumeSection:React.FC<Props> = (props) => {
     return (
     <>
         <div className='w-[255px]'>
@@ -33,10 +37,10 @@ const ResumeSection = () => {
               <div>{`Certification & Hobbies`}</div>
             </div>
           </div>
-          <div className='text-sm border-t mt-8 py-3 font-light hover:text-red-500 cursor-pointer flex space-x-2'>
+          <button onClick={props.handlePrint} type='button' className='text-sm border-t mt-8 py-3 font-light hover:text-red-500 cursor-pointer flex space-x-2'>
               <div><FaDownload size="16px"  /></div>
               <div>Download</div>
-            </div>
+            </button>
         </div>
     </>
   )
