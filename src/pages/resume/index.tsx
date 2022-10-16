@@ -17,20 +17,7 @@ import About from '../../components/template/about';
 
 const Resume = () => {
 
-  const ComponentToPrint = React.forwardRef((props, ref:any) => (
-  <div ref={ref}>Hello World</div>
-));
-
-const dom = <Template />
-  const printRef:any = useRef();
-
-  const handlePrint = async() => {
-    // const qrDocs = new jsPDF("portrait", "pt", "a4");
-    // const data: any = await printRef;
-    // qrDocs.html(data).then(() => {
-    //   qrDocs.save('yourcv.pdf')
-    // });
-  }
+  const printRef:any = useRef()
 
   return (
     <div>
@@ -38,14 +25,13 @@ const dom = <Template />
           <div className='flex max-w-6xl w-full mx-auto space-x-16 mt-16 mb-28'>
         <ResumeSection handlePrint={() => exportComponentAsPDF(printRef, {
           pdfOptions: {
-            w: 100,
-            h: 50,
-            x: 0,
-            y: 0,
-            unit: 'cm',
-            orientation: 'p'
-              }
-            })} />
+            w: 200,
+            h: 230,
+            x: 90,
+            y: 20,
+            orientation: 'p',
+            pdfFormat: 'ledger'
+          }})} />
         <Template ref={printRef} />
       </div>
       </div>
