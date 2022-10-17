@@ -1,18 +1,8 @@
 import React, { useRef } from 'react'
-import { exportComponentAsJPEG, exportComponentAsPDF, PDFOptions, exportComponentAsPNG } from 'react-component-export-image';
-import {jsPDF} from 'jspdf';
-import Footer from '../../components/footer';
+import { exportComponentAsJPEG, exportComponentAsPDF, exportComponentAsPNG } from 'react-component-export-image';
 import Header from '../../components/header';
 import ResumeSection from '../../components/sections/resume';
 import Template from '../../components/template';
-import Range from '../../public/svgs/range';
-import Linkedin from '../../public/svgs/linkedin';
-import Portfolio from '../../public/svgs/portfolio';
-import Phone from '../../public/svgs/phone';
-import Cert from '../../public/svgs/cert';
-import Twitter from '../../public/svgs/twitter';
-import Mail from '../../public/svgs/mail';
-import About from '../../components/template/about';
 
 
 const Resume = () => {
@@ -26,11 +16,11 @@ const Resume = () => {
         <ResumeSection handlePrint={() => exportComponentAsPDF(printRef, {
           pdfOptions: {
             w: 200,
-            h: 230,
-            x: 90,
-            y: 20,
+            h: 200,
+            x: 40,
+            y: 5,
             orientation: 'p',
-            pdfFormat: 'ledger'
+            pdfFormat: 'letter'
           }})} />
         <Template ref={printRef} />
       </div>
