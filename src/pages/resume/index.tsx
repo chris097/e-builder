@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { exportComponentAsJPEG, exportComponentAsPDF, exportComponentAsPNG } from 'react-component-export-image';
+import { exportComponentAsPDF } from 'react-component-export-image';
 import Header from '../../components/header';
 import ResumeSection from '../../components/sections/resume';
 import Template from '../../components/template';
