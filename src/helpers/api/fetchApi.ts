@@ -1,4 +1,4 @@
-const fetchApi = (url:string) => {
+export const fetchApi = (url:string) => {
     const headers = new Headers({
         "Content-Type": "application/json",
         Accept: "application/json",
