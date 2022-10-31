@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import { mutationApi } from "./mutationApi"
+import { mutationApi } from "./api/mutationApi"
 
 export const Mutation = () => {
     // const {data} = useMutation(mutationApi('POST', '', '', '', {}))

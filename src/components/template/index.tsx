@@ -1,4 +1,6 @@
 import React from 'react'
+import { fetchApi } from '../../helpers/api/fetchApi'
+import useQueryApi from '../../helpers/useQuery'
 import Cert from '../../public/svgs/cert'
 import Linkedin from '../../public/svgs/linkedin'
 import Mail from '../../public/svgs/mail'
@@ -9,7 +11,14 @@ import Twitter from '../../public/svgs/twitter'
 import About from './about'
 
 
-const Template = React.forwardRef((props, ref:any) => {
+const Template = React.forwardRef((props, ref: any) => {
+
+  const { data, isLoading } = useQueryApi(['summary'], () => fetchApi('http://localhost:5400/api/v1/user/work-history'));
+  if (isLoading) {
+    console.log('loading...')
+  }
+  console.log(data)
+
   return (
     <div ref={ref} className='bg-primarygray h-auto rounded-md w-full px-6 py-8'>
       <About />
