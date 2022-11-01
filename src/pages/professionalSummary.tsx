@@ -135,7 +135,11 @@ const ProfessionalSummary = () => {
                             ...formik.getFieldProps('phoneNumber')
                         }}
                     />
-                  </div>
+                      </div>
+                      <div className='mt-3 text-basegray text-sm'>
+                          <label>About Yourself</label>
+                          <textarea className='border w-full h-24 p-3 mt-1 focus:outline-none border-gray-300' />
+                      </div>
                   <div className='mt-7'>
                       <button type='submit' onClick={() => setToggleAdditionalLink(open => !open)} className='flex space-x-1 items-center text-sm text-blue-500 cursor-pointer'>
                         <BsPlusLg />
