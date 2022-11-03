@@ -6,8 +6,12 @@ import { fetchApi } from "./api/fetchApi";
 // const { LOCALHOST } = process.env;
 // console.log(process.env)
 
-const useQueryApi = (key:string[], payload:string) => {
-    const { data, isLoading } = useQuery([key], () => fetchApi(`http://localhost:5400/api/v1/${payload}`))
+const useQueryApi = (
+  key: string[],
+  payload: string
+) => {
+  const { data, isLoading } = useQuery([key],
+    () => fetchApi(`http://localhost:5400/api/v1/${payload}`))
     return {
       data,
       isLoading

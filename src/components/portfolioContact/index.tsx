@@ -1,4 +1,5 @@
 import React from 'react'
+import useQueryApi from '../../helpers/useQuery';
 import Linkedin from '../../public/svgs/linkedin';
 import Mail from '../../public/svgs/mail';
 import Phone from '../../public/svgs/phone';
@@ -6,6 +7,10 @@ import Portfolio from '../../public/svgs/portfolio';
 import Twitter from '../../public/svgs/twitter';
 
 const PortfolioContact = () => {
+  
+  const { data, isLoading } = useQueryApi(['info'], 'user/info');
+  const infos: [] = data?.data;
+
   return (
     <div className='px-6 pt-7 pb-4 bg-white mb-4 rounded-md h-auto'>
             <div className='font-medium text-xl mb-5'>{`PORTFOLIO & CONTACT`}</div>
