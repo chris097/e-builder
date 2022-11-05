@@ -8,8 +8,8 @@ import Twitter from '../../public/svgs/twitter';
 
 const PortfolioContact = () => {
   
-  const { data, isLoading } = useQueryApi(['info'], 'user/info');
-  const infos: [] = data?.data;
+  // const { data, isLoading } = useQueryApi(['info'], 'user/info');
+  // const infos: [] = data?.data;
 
   return (
     <div className='px-6 pt-7 pb-4 bg-white mb-4 rounded-md h-auto'>
