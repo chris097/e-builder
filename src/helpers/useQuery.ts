@@ -1,17 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchApi } from "./api/fetchApi";
-// import * as dotenv from 'dotenv';
-// dotenv.config();
 
-// const { LOCALHOST } = process.env;
-// console.log(process.env)
+const { REACT_APP_BACKEND_URL } = process.env;
 
 const useQueryApi = (
   key: string[],
   payload: string
 ) => {
-  const { data, isLoading } = useQuery([key],
-    () => fetchApi(`http://localhost:5400/api/v1/${payload}`))
+  const { data, isLoading } = useQuery({queryKey: [key],
+    queryFn: () => fetchApi(`${REACT_APP_BACKEND_URL}/${payload}`)})
     return {
       data,
       isLoading

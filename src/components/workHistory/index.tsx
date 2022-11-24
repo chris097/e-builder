@@ -1,10 +1,12 @@
 import React from 'react'
+import { CONSTANT_TEXT } from '../../constant';
+import { apiUrls } from '../../helpers/api/url';
 import useQueryApi from '../../helpers/useQuery';
 import dateFormat from '../dateFormat';
 import { SkeletonWorkHistory } from '../skeletonLoader';
 
 const WorkHistory = () => {
-  const { data, isLoading } = useQueryApi(['workHistory'], 'user/work-history');
+  const { data, isLoading } = useQueryApi([CONSTANT_TEXT.GET_WORK_HISTORY], apiUrls.WORK_HISTORY);
   const works:[] = data?.data;
 
   return (

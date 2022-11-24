@@ -1,10 +1,12 @@
+import { CONSTANT_TEXT } from '../../constant';
+import { apiUrls } from '../../helpers/api/url';
 import useQueryApi from '../../helpers/useQuery'
 import Avatar from '../../public/svgs/avatar'
 import { SkeletonAbout } from '../skeletonLoader';
 
 const About = () => {
 
-  const { isLoading, data } = useQueryApi(['about'], 'user/info');
+  const { isLoading, data } = useQueryApi([CONSTANT_TEXT.GET_ABOUT], apiUrls.USER_INFO);
 
   const abouts:[] = data?.data;
 
