@@ -1,15 +1,16 @@
-export const mutationApi = async (
-    method: string,
-    token: string,
+export const mutationApi = (
     url: string,
-    payload: string,
-    responses: any
+    method: string,
+    // token: string,
+    payload: object,
+    responses: any,
+    err: any
 ) => {
     const headers = new Headers({
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
-        authorization: `Bearer ${token}`,
+        // authorization: `Bearer ${token}`,
     });
 
     const request = new Request(url, {
@@ -18,8 +19,8 @@ export const mutationApi = async (
         body: JSON.stringify(payload),
     })
     
-    await fetch(request)
+    fetch(request)
         .then((responses) => responses.json())
         .then(responses)
-        .catch(err => console.log(err.message))
+        .catch(err)
 };

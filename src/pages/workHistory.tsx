@@ -4,6 +4,8 @@ import Header from '../components/header';
 import { BsPlusLg } from 'react-icons/bs';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { userinfoSchema } from '../validator';
 
 const WorkHistory = () => {
 
