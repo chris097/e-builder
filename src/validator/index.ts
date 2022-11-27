@@ -15,3 +15,13 @@ export const userinfoSchema = yup.object().shape({
     twitter: yup.string().required(),
     website: yup.string().required()
 });
+
+export const workHistorySchema = yup.object().shape({
+    title: yup.string().required(),
+    description: yup.string().required(),
+    employer: yup.string().required(),
+    state: yup.string().required(),
+    country: yup.string().required(),
+    start_date: yup.string().required(),
+    end_date: yup.string()
+})

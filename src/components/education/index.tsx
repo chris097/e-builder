@@ -6,7 +6,7 @@ const Education = () => {
   const educations = data?.data;
   
   return (
-    <div className='px-6 py-7 bg-white mb-4 rounded-md h-[164.74px]'>
+    <div className='px-6 py-7 w-full bg-white mb-4 rounded-md h-[164.74px]'>
         <div className='font-medium text-xl mb-5'>Education</div>
       {isLoading ? " " : educations?.map((school:any, index:any) => (
         <div key={index} className='flex flex-col space-y-2'>

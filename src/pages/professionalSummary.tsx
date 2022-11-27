@@ -57,8 +57,8 @@ const ProfessionalSummary = () => {
           if (res.status === 201) {
             toast.success(res.message)
             setLoading(false)
-            navigate(ROUTE_URL.RESUME_URL)
-            queryClient.invalidateQueries()
+            // queryClient.invalidateQueries()
+            navigate(ROUTE_URL.WORK_HISTORY_URL)
           } else {
             toast.error(res.message)
             setLoading(false)

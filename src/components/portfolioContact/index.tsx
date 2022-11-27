@@ -10,14 +10,13 @@ import Twitter from '../../public/svgs/twitter';
 
 const PortfolioContact = () => {
   
-   //query
-  const { data } = useQueryApi([CONSTANT_TEXT.GET_ABOUT], apiUrls.USER_INFO);
+  //query
+  const { data, isLoading } = useQueryApi([CONSTANT_TEXT.GET_ABOUT], apiUrls.USER_INFO);
   const contact = data?.data[0];
-  console.log(contact)
 
   return (
-    <div className='px-6 pt-7 pb-4 bg-white mb-4 rounded-md h-auto'>
-            <div className='font-medium text-xl mb-5'>{`PORTFOLIO & CONTACT`}</div>
+    <div className='px-6 pt-7 pb-4 bg-white w-full rounded-md h-auto'>
+      {isLoading ? 'Loading...' : <><div className='font-medium text-xl mb-5'>{`PORTFOLIO & CONTACT`}</div>
             <div className='flex items-center space-x-1 mb-3'>
               <Mail />
               <span className='text-secondarygray text-sm font-light'>
@@ -48,6 +47,7 @@ const PortfolioContact = () => {
             {contact?.phone || 'Your phone number'}
               </span>
             </div>
+      </>}
           </div>
   )
 }
