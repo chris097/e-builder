@@ -1,4 +1,6 @@
 import React from 'react'
+import { CONSTANT_TEXT } from '../../constant';
+import { apiUrls } from '../../helpers/api/url';
 import useQueryApi from '../../helpers/useQuery';
 import Linkedin from '../../public/svgs/linkedin';
 import Mail from '../../public/svgs/mail';
@@ -8,8 +10,10 @@ import Twitter from '../../public/svgs/twitter';
 
 const PortfolioContact = () => {
   
-  const { data, isLoading } = useQueryApi(['info'], 'user/info');
-  const infos: [] = data?.data;
+   //query
+  const { data } = useQueryApi([CONSTANT_TEXT.GET_ABOUT], apiUrls.USER_INFO);
+  const contact = data?.data[0];
+  console.log(contact)
 
   return (
     <div className='px-6 pt-7 pb-4 bg-white mb-4 rounded-md h-auto'>
@@ -17,31 +21,31 @@ const PortfolioContact = () => {
             <div className='flex items-center space-x-1 mb-3'>
               <Mail />
               <span className='text-secondarygray text-sm font-light'>
-                <a href="">chrisfidel.international@gmail.com</a>
+                {contact?.email || 'Your email address'}
               </span>
             </div>
             <div className='flex items-center space-x-1 mb-3'>
               <Twitter />
               <span className='text-secondarygray text-sm font-light'>
-                <a href="">chrisfidel.international@gmail.com</a>
+                {contact?.twitter || 'Your twitter link'}
               </span>
             </div>
             <div className='flex items-center space-x-1 mb-3'>
               <Linkedin />
               <span className='text-secondarygray text-sm font-light'>
-                <a href="">https://www.linkedin.com/in/christian-chiemela-b88</a>
+                {contact?.linkedin || 'Your linkedin link'}
               </span>
             </div>
             <div className='flex items-center space-x-1 mb-3'>
               <Portfolio />
               <span className='text-secondarygray text-sm font-light'>
-                <a href="">chrisfidel.international@gmail.com</a>
+              { contact?.website || 'Your portfolio link'}
               </span>
             </div>
             <div className='flex items-center space-x-1 mb-3'>
               <Phone />
               <span className='text-secondarygray text-sm font-light'>
-                <a href="">chrisfidel.international@gmail.com</a>
+            {contact?.phone || 'Your phone number'}
               </span>
             </div>
           </div>
