@@ -14,11 +14,13 @@ const Template = React.forwardRef((props, ref: any) => {
   return (
     <div ref={ref} className='bg-primarygray h-auto rounded-md w-full px-6 py-8'>
       <About />
-      <div className='flex space-x-4 w-full mt-4'>
+      <div className='w-full space-y-6 mt-4'>
         <WorkHistory />
-        <div className='flex-1 h-auto'>
+        <div className='flex space-x-6'>
           <PortfolioContact />
           <Skill />
+        </div>
+        <div className='flex space-x-6 w-full'>
           <Education />
           <Certification />
         </div>
