@@ -10,5 +10,8 @@ export const userinfoSchema = yup.object().shape({
     street: yup.string().required(),
     state: yup.string().required(),
     country: yup.string().required(),
-    bio: yup.string().required().min(50).max(500)
+    bio: yup.string().required().min(50).max(500),
+    linkedin: yup.string().required(),
+    twitter: yup.string().required(),
+    website: yup.string().required()
 });
