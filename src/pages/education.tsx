@@ -11,7 +11,6 @@ const Education = () => {
 
     const [additionalLink, setAdditionalLink] = useState(new Map())
 
-    console.log(additionalLink)
 
   return (
      <div>

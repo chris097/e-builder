@@ -14,8 +14,6 @@ const WorkHistory = () => {
           <div id="pdf" className='font-medium text-xl mb-5'>WORK HISTORY</div>
       {isLoading ? <div>
         <SkeletonWorkHistory />
-        <SkeletonWorkHistory />
-        <SkeletonWorkHistory />
       </div> : works?.map((work:any, index:any) => (
           <div key={index} className='mb-6 border-b border-gray-100 pb-6'>
           <div className='text-secondarygray capitalize'>{work.title} | {work.employer}, Nigeria</div>
