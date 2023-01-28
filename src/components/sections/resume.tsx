@@ -12,7 +12,7 @@ type Props = {
 const ResumeSection:React.FC<Props> = (props) => {
     return (
     <>
-        <div className='w-[255px]'>
+        <div className='w-[255px] md:block hidden'>
           <div className='border-b py-2 text-basegray'>Personal Information</div>
           <div className='mt-6 text-sm text-basegray'>RESUME SECTION</div>
           <div className='mt-4 flex flex-col space-y-3'>

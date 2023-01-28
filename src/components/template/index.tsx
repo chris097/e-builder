@@ -16,11 +16,11 @@ const Template = React.forwardRef((props, ref: any) => {
       <About />
       <div className='w-full space-y-6 mt-4'>
         <WorkHistory />
-        <div className='flex space-x-6'>
+        <div className='md:flex md:gap-6 space-y-6 block w-full'>
           <PortfolioContact />
           <Skill />
         </div>
-        <div className='flex space-x-6 w-full'>
+        <div className='md:flex md:gap-6 block w-full'>
           <Education />
           <Certification />
         </div>
