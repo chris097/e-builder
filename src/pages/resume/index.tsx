@@ -12,7 +12,7 @@ const Resume = () => {
   return (
     <div>
         <Header />
-          <div className='flex max-w-6xl w-full mx-auto space-x-16 mt-16 mb-28'>
+          <div className='flex max-w-6xl md:w-full w-[90%] mx-auto md:space-x-16 md:mt-16 mt-10 mb-28'>
         <ResumeSection handlePrint={() => exportComponentAsPDF(printRef, {
           pdfOptions: {
             w: 200,

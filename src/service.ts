@@ -11,4 +11,9 @@ export const fetchProfessionalSummary = (payload: object, responses: any, err: a
 export const fetchWorkHistory = (payload: object, responses: any, err: any) => {
     const workHistory = `${REACT_APP_BACKEND_URL}/${apiUrls.WORK_HISTORY}`;
     return mutationApi(workHistory, apiUrls.POST, payload, responses, err)
+};
+
+export const createTechnicalSkill = (payload: object, responses: any, err: any) => {
+    const technicalSkill = `${REACT_APP_BACKEND_URL}/${apiUrls.TECHNICAL_SKILL}`;
+    return mutationApi(technicalSkill, apiUrls.POST, payload, responses, err)
 }

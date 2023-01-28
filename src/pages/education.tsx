@@ -9,9 +9,6 @@ const Education = () => {
 
     const navigate = useNavigate();
 
-    const [additionalLink, setAdditionalLink] = useState(new Map())
-
-
   return (
      <div>
           <Header />
