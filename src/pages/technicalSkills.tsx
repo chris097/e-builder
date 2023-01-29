@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/header'
+import Header from '../components/Header'
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import {GrFormClose} from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +50,6 @@ const TechnicalSkills = () => {
 
   return (
     <div>
-      <Header />
       <div className='max-w-5xl mx-auto w-full my-8 font-sans'>
         <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
         <div>

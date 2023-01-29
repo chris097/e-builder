@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Input from '../components/input';
-import Header from '../components/header';
+import Header from '../components/Header';
 import { BsPlusLg } from 'react-icons/bs';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useFormik } from 'formik';
 import { userinfoSchema, workHistorySchema } from '../validator';
 import { fetchWorkHistory } from '../service';
 import toast from 'react-hot-toast';
-import { ROUTE_URL } from '../Routes/url';
+import { ROUTE_URL } from '../routes/url';
 import { CONSTANT_TEXT } from '../constant';
 import { apiUrls } from '../helpers/api/url';
 import useQueryApi from '../helpers/useQuery';
@@ -51,7 +51,6 @@ const WorkHistory = () => {
 
   return (
     <>
-      <Header />
       <div className='max-w-5xl mx-auto w-full my-8'>
         <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
         <div className='max-w-4xl mx-auto'>

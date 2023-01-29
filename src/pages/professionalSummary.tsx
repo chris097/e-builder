@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/header';
+import Header from '../components/Header';
 import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
 import { BsPlusLg } from 'react-icons/bs';
 import Input from '../components/input';
@@ -11,7 +11,7 @@ import { userinfoSchema } from '../validator';
 import { useQueryClient } from '@tanstack/react-query';
 import { fetchProfessionalSummary } from '../service';
 import toast from 'react-hot-toast';
-import { ROUTE_URL } from '../Routes/url';
+import { ROUTE_URL } from '../routes/url';
 import useQueryApi from '../helpers/useQuery';
 import { CONSTANT_TEXT } from '../constant';
 import { apiUrls } from '../helpers/api/url';
@@ -74,7 +74,6 @@ const ProfessionalSummary = () => {
 
   return (
     <div>
-      <Header />
       <div className='max-w-5xl mx-auto w-full my-8'>
         <button onClick={() => navigate(-1)} className='mb-6 text-basegray text-sm font-light flex space-x-1 cursor-pointer items-center'><MdOutlineKeyboardBackspace size="16px" /> <span>Back</span></button>
         <div className='max-w-4xl mx-auto'>

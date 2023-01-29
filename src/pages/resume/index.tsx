@@ -1,17 +1,20 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { exportComponentAsPDF } from 'react-component-export-image';
-import Header from '../../components/header';
+import { useNavContext } from '../../context/navContext';
 import ResumeSection from '../../components/sections/resume';
+import Sidebar from '../../components/Sidebar';
 import Template from '../../components/template';
 
 
 const Resume = () => {
 
-  const printRef:any = useRef()
+  const { showNav } = useNavContext();
+  const printRef: any = useRef();
+
 
   return (
     <div>
-        <Header />
+      {showNav === false ? "" : <Sidebar />}
           <div className='flex max-w-6xl md:w-full w-[90%] mx-auto md:space-x-16 md:mt-16 mt-10 mb-28'>
         <ResumeSection handlePrint={() => exportComponentAsPDF(printRef, {
           pdfOptions: {
