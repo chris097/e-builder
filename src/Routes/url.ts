@@ -8,8 +8,8 @@ type RouteUrl = {
 
 export const ROUTE_URL:RouteUrl = {
     RESUME_URL: '/',
-    PROFESSION_SUMMARY_URL: '/professional-summary',
-    WORK_HISTORY_URL: '/work-history',
-    EDUCATION_URL: '/education',
-    TECHNICAL_SKILL_URL: '/technical-skill'
+    PROFESSION_SUMMARY_URL: '/resume/summary',
+    WORK_HISTORY_URL: '/resume/history',
+    EDUCATION_URL: '/resume/education',
+    TECHNICAL_SKILL_URL: '/resume/skill'
 }
