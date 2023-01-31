@@ -1,10 +1,15 @@
-import React, { useState} from 'react';
+import React, { ReactNode, useState} from 'react';
 
 type NavProps = {
   showNav: boolean;
   toggleOpenNav: () => void;
   toggleCloseNav: () => void;
 }
+
+type Props ={
+  children?: ReactNode
+}
+
 const defaultState = {
   showNav: false,
   toggleOpenNav: () => { },
@@ -15,7 +20,7 @@ export const navContext = React.createContext<NavProps>(defaultState);
 
 export const useNavContext = () => React.useContext(navContext);
 
-export const NavProvider = ({ children }: any) => {
+export const NavProvider = ({ children }: Props) => {
   //states
   const [showNav, setShowNav] = useState<boolean>(defaultState.showNav);
   //functions

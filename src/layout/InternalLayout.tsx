@@ -14,7 +14,7 @@ const InternalLayout:React.FC<Props> = ({ Component, ...otherProps }) => {
                 {/* <Sidebar /> */}
                 <Header />
             </div>
-            <main className="overflow-x-hidden">
+            <main className="overflow-x-hidden mt-20">
                 <Component {...otherProps} />
             </main>
         </div>
