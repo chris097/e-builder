@@ -11,7 +11,7 @@ const Header = () => {
     const handleCloseNav = () => toggleOpenNav();
     
     return (
-        <div className='font-opensans bg-white shadow w-full'>
+        <div className='font-opensans bg-white shadow w-full fixed top-0 left-0'>
             <div className='h-20 flex items-center max-w-6xl justify-between md:w-full w-[90%] mx-auto'>
             <div className='flex gap-3 items-center md:w-full w-[90%] mx-auto'>
             <span onClick={handleCloseNav} className='cursor-pointer block md:hidden'><FiMenu size={26} /></span>

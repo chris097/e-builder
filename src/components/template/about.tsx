@@ -16,10 +16,10 @@ const About = () => {
           <Avatar />
           <div>
             <div className='text-lg capitalize'>{(bio?.first_name && bio?.last_name) || "Jane Doe"}</div>
-            <div className='font-light text-sm text-basegray capitalize'>{bio?.profession || "frontend Engineer"}</div>
+            <div className='font-light text-sm text-basegray capitalize'>{bio?.profession || "Frontend Engineer"}</div>
             <div className='mt-2'>
               <div className='text-lg'>ADDRESS</div>
-              <div className='font-light text-sm text-basegray capitalize'>{([bio?.street, bio?.city, bio?.state, bio?.country])?.join(", ") || "10 deji odunuga str, lagos Nigeria"}</div>
+              <div className='font-light text-sm text-basegray capitalize'>{(([bio?.street, bio?.city, bio?.state, bio?.country])?.join(", ")) || ("10 deji odunuga str, lagos Nigeria")}</div>
             </div>
             <div className='mt-2'>
               <div className='text-lg'>Bio</div>
