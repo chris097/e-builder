@@ -1,6 +1,6 @@
 import React from 'react'
-import { fetchApi } from '../../helpers/api/fetchApi'
-import useQueryApi from '../../helpers/useQuery'
+// import { fetchApi } from '../../helpers/api/fetchApi'
+// import useQueryApi from '../../helpers/useQuery'
 import Certification from '../certification'
 import Education from '../education'
 import PortfolioContact from '../portfolioContact'
@@ -16,7 +16,7 @@ const Template = React.forwardRef((props, ref: any) => {
       <About />
       <div className='w-full space-y-6 mt-4'>
         <WorkHistory />
-        <div className='md:flex md:gap-6 space-y-6 block w-full'>
+        <div className='md:flex md:gap-6 block w-full'>
           <PortfolioContact />
           <Skill />
         </div>

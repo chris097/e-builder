@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { FiMenu } from 'react-icons/fi';
-import {HiUserGroup, HiPencil } from "react-icons/hi"
-import {FaGraduationCap} from "react-icons/fa"
-import {BsFillAwardFill} from "react-icons/bs"
+import { HiUserGroup, HiPencil } from "react-icons/hi";
+import { FaGraduationCap } from "react-icons/fa";
+import { BsFillAwardFill } from "react-icons/bs";
+// import { FaDownload } from 'react-icons/fa';
 import { ROUTE_URL } from "../routes/url";
 
 type NavLinkProps = {
@@ -34,7 +35,7 @@ export const navLinks: NavLinkProps[] = [
     },
     {
         name: "Certification & Hobbies",
-        icon: <BsFillAwardFill size="16px"  />,
+        icon: <BsFillAwardFill size="16px" />,
         to: ROUTE_URL.PROFESSION_SUMMARY_URL
     },
-]
+];
