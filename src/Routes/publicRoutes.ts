@@ -1,11 +1,12 @@
 import React from "react";
 import ComposeInternalLayouts from "../components/HOC/ComposeInternalLayout";
+import Home from "../pages/Home";
 import { ROUTE_URL } from "./url";
-const Education = React.lazy(() =>  import("../pages/education"));
-const ProfessionalSummary = React.lazy(() => import("../pages/professionalSummary"));
-const TechnicalSkills = React.lazy(() => import("../pages/technicalSkills"));
-const WorkHistory =  React.lazy(() => import("../pages/workHistory"));
-const Resume = React.lazy(() => import("../pages/resume"));
+const Education = React.lazy(() =>  import("../pages/Education"));
+const ProfessionalSummary = React.lazy(() => import("../pages/ProfessionalSummary"));
+const TechnicalSkills = React.lazy(() => import("../pages/TechnicalSkills"));
+const WorkHistory =  React.lazy(() => import("../pages/WorkHistory"));
+const Resume = React.lazy(() => import("../pages/Resume"));
 
 
 type PublicRouteProps = {
@@ -14,6 +15,14 @@ type PublicRouteProps = {
 };
 
 export const publicRoutes: PublicRouteProps[] = [
+    {
+        path: ROUTE_URL.NOT_FOUND,
+        element: Home
+    },
+    {
+        path: ROUTE_URL.HOME_URL,
+        element: Home
+    },
     {
         path: ROUTE_URL.RESUME_URL,
         element: ComposeInternalLayouts(Resume)

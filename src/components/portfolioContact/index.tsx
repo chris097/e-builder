@@ -15,14 +15,14 @@ const PortfolioContact = () => {
   const contact = data?.data[0];
 
   return (
-    <div className='px-6 pt-7 pb-4 bg-white w-full rounded-md h-auto'>
+    <div className='px-6 pt-7 pb-4 bg-white w-full mb-5 md:mb-0 rounded-md h-auto'>
       {isLoading ? 'Loading...' : <><div className='font-medium text-xl mb-5'>{`PORTFOLIO & CONTACT`}</div>
-            <div className='flex items-center space-x-1 mb-3'>
+            {/* <div className='flex items-center space-x-1 mb-3'>
               <Mail />
               <span className='text-secondarygray text-sm font-light'>
                 {contact?.email || 'Your email address'}
               </span>
-            </div>
+            </div> */}
             <div className='flex items-center space-x-1 mb-3'>
               <Twitter />
               <span className='text-secondarygray text-sm font-light'>
@@ -41,12 +41,12 @@ const PortfolioContact = () => {
               { contact?.website || 'Your portfolio link'}
               </span>
             </div>
-            <div className='flex items-center space-x-1 mb-3'>
+            {/* <div className='flex items-center space-x-1 mb-3'>
               <Phone />
               <span className='text-secondarygray text-sm font-light'>
             {contact?.phone || 'Your phone number'}
               </span>
-            </div>
+            </div> */}
       </>}
           </div>
   )

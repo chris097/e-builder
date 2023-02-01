@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const Avatar = () => {
+type AvatarProps = {
+    width: string,
+    height: string
+}
+
+const Avatar:React.FC<AvatarProps> = (props) => {
   return (
         <span>
-            <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <svg width={props.width} height={props.height} viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <circle cx="29.9258" cy="30.6161" r="29.6293" transform="rotate(0.0708113 29.9258 30.6161)" fill="url(#pattern0)"/>
             <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

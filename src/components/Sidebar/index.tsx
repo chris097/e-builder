@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
       <div className='bg-white border border-l block md:hidden z-50 flex-col items-center h-screen w-2/5 fixed top-0 left-0'>
           <div className='h-20 border-b w-full z-50 flex justify-between px-6 items-center'>
-              <Logo />
+              <Logo width='122' height='32' />
               <span className='cursor-pointer' onClick={handleCloseNav}><IoCloseOutline size={28} color="#393E4D" /></span>
           </div>
           <div className='w-[255px]'>

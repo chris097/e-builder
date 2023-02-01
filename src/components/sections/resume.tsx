@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
+import { AiTwotoneSetting } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../../utils/navLinks';
 
@@ -27,14 +29,14 @@ const ResumeSection:React.FC<Props> = (props) => {
             <div className='fixed bottom-14'>
                <button onClick={props.handlePrint} type='button' className='text-sm mt-4 font-light hover:text-red-500 cursor-pointer flex space-x-2'>
               <div><FaDownload size="16px"  /></div>
-              <div>Download Resume</div>
+              <div>Download</div>
             </button>
                <button onClick={props.handlePrint} type='button' className='text-sm mt-4 font-light hover:text-red-500 cursor-pointer flex space-x-2'>
-              <div><FaDownload size="16px"  /></div>
+              <div><AiTwotoneSetting size="16px"  /></div>
               <div>Settings</div>
             </button>
                <button onClick={props.handlePrint} type='button' className='text-sm mt-4 font-light hover:text-red-500 cursor-pointer flex space-x-2'>
-              <div><FaDownload size="16px"  /></div>
+              <div><FiLogOut size="16px"  /></div>
               <div>Logout</div>
             </button>
             </div>

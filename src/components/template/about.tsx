@@ -13,10 +13,12 @@ const About = () => {
     <div className='bg-white w-full p-4 rounded-md'>
       {isLoading ? <SkeletonAbout /> :
         <div className='flex space-x-5'>
-          <Avatar />
+          <Avatar width='60' height='61' />
           <div>
-            <div className='text-lg capitalize'>{(bio?.first_name && bio?.last_name) || "Jane Doe"}</div>
+            <div>
+               <div className='text-lg capitalize'>{(bio?.first_name && bio?.last_name) || "Jane Doe"}</div>
             <div className='font-light text-sm text-basegray capitalize'>{bio?.profession || "Frontend Engineer"}</div>
+              </div>
             <div className='mt-2'>
               <div className='text-lg'>ADDRESS</div>
               <div className='font-light text-sm text-basegray capitalize'>{(([bio?.street, bio?.city, bio?.state, bio?.country])?.join(", ")) || ("10 deji odunuga str, lagos Nigeria")}</div>

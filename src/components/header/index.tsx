@@ -15,7 +15,7 @@ const Header = () => {
             <div className='h-20 flex items-center max-w-6xl justify-between md:w-full w-[90%] mx-auto'>
             <div className='flex gap-3 items-center md:w-full w-[90%] mx-auto'>
             <span onClick={handleCloseNav} className='cursor-pointer block md:hidden'><FiMenu size={26} /></span>
-               <Logo />
+               <Logo width='122' height='32' />
             </div>
             <div className='whitespace-nowrap text-sm text-secondarygray bg-primarygray p-3 rounded'>Updated: Dec, 10, 2023 09:40PM</div>
         </div>

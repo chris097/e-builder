@@ -7,7 +7,7 @@ type NavProps = {
 }
 
 type Props ={
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 const defaultState = {
