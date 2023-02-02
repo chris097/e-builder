@@ -8,6 +8,9 @@ import './App.css';
 
 function App() {
 
+  const privateRoutes = routes.privateRoutes.map(({ path, element: Component }) => (
+    <Route key={path} path={path} element={<Component />} />
+  ));
   const publicRoutes = routes.publicRoutes.map(({ path, element: Component }) => (
     <Route key={path} path={path} element={<Component />} />
   ));
@@ -17,7 +20,8 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
       <Toaster position="top-center" />
       <Router>
-        <Routes>
+          <Routes>
+            {privateRoutes}
             {publicRoutes}
         </Routes>
        </Router>

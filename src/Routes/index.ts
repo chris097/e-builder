@@ -1,9 +1,9 @@
 import { publicRoutes } from "./publicRoutes";
-// import { privateRoutes } from "./privateRoutes";
+import { privateRoutes } from "./privateRoutes";
 
 const routes = {
     publicRoutes,
-    // privateRoutes
+    privateRoutes
 };
 
 export default routes;

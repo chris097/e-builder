@@ -2,7 +2,7 @@ import React from "react"
 
 type InputProps = {
     label?: string,
-    input?: any;
+  input?: any;
 }
 
 const Input:React.FC<InputProps> = (props) => {
