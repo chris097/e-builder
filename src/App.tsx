@@ -1,10 +1,10 @@
 import {Suspense} from 'react';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import routes from './routes/index';
 import { NavProvider } from './context/navContext';
 import './App.css';
 import { AuthProvider } from './context/authContext';
-import routes from '../src/routes/index';
 
 
 function App() {
