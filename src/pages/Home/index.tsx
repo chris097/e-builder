@@ -10,7 +10,7 @@ import { ROUTE_URL } from '../../routes/url';
 import BottomResume from '../../components/Home/BottomResume';
 
 const Home = () => {
-  //states
+  //state
   const [currentName, setCurrentName] = useState<string>(names[0]);
 
   // variables
