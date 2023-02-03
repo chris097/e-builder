@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Input from '../components/input';
-import Header from '../components/Header';
-import { BsPlusLg } from 'react-icons/bs';
-import { MdOutlineKeyboardBackspace, MdDelete } from 'react-icons/md';
+import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { userinfoSchema, workHistorySchema } from '../validator';
+import { workHistorySchema } from '../validator';
 import { fetchWorkHistory } from '../service';
 import toast from 'react-hot-toast';
 import { ROUTE_URL } from '../routes/url';
-import { CONSTANT_TEXT } from '../constant';
-import { apiUrls } from '../helpers/api/url';
-import useQueryApi from '../helpers/useQuery';
+// import { CONSTANT_TEXT } from '../constant';
+// import { apiUrls } from '../helpers/api/url';
+// import useQueryApi from '../helpers/useQuery';
 
 const WorkHistory = () => {
 
@@ -20,8 +18,8 @@ const WorkHistory = () => {
   // routes
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQueryApi([CONSTANT_TEXT.GET_WORK_HISTORY], apiUrls.WORK_HISTORY);
-  const works: [] = data?.data;
+  // const { data, } = useQueryApi([CONSTANT_TEXT.GET_WORK_HISTORY], apiUrls.WORK_HISTORY);
+  // const works: [] = data?.data;
 
   const formik = useFormik({
     initialValues: {
@@ -121,7 +119,7 @@ const WorkHistory = () => {
             </div>
             <div className='flex justify-between mt-16 font-light'>
               <button type='button' className='border w-32 h-10'>Back</button>
-                <button type='submit' className='bg-red-500 hover:bg-red-700 text-white w-32 h-10'>{`Save & Next`}</button>
+                <button type='submit' className='bg-red-500 hover:bg-red-700 text-white w-32 h-10'>{loading ? "loading..." : `Save & Next`}</button>
             </div>
           </form>
         </div>
