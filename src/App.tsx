@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { NavProvider } from './context/navContext';
 import './App.css';
 import { AuthProvider } from './context/authContext';
-import routes from './routes';
+import routes from '../src/routes/index';
 
 
 function App() {

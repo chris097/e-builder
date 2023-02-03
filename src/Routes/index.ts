@@ -1,5 +1,5 @@
-import { publicRoutes } from "../routes/publicRoutes";
-import { privateRoutes } from "../routes/privateRoutes";
+import { publicRoutes } from "./publicRoutes";
+import { privateRoutes } from "./privateRoutes";
 
 const routes = {
     publicRoutes,

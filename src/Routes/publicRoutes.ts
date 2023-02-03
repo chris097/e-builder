@@ -1,7 +1,7 @@
 import React from "react";
 import ComposeInternalLayouts from "../components/HOC/ComposeInternalLayout";
 import Home from "../pages/Home";
-import { ROUTE_URL } from "../routes/url";
+import { ROUTE_URL } from "./url";
 const Education = React.lazy(() =>  import("../pages/education"));
 const ProfessionalSummary = React.lazy(() => import("../pages/professionalSummary"));
 const TechnicalSkills = React.lazy(() => import("../pages/technicalSkills"));
