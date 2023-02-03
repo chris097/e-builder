@@ -14,9 +14,9 @@ const Home = () => {
   const [currentName, setCurrentName] = useState<string>(names[0]);
 
   // variables
-  let name: string = names[0]
   
   useEffect(() => {
+    let name: string = names[0];
     const interval = setInterval(() => {
       name = nextElementInList(names, name, setCurrentName);
     }, 3700);
