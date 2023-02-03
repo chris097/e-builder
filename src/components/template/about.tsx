@@ -9,6 +9,8 @@ const About = () => {
   const { isLoading, data } = useQueryApi([CONSTANT_TEXT.GET_ABOUT], apiUrls.USER_INFO);
   const bio = data?.data[0] || {};
 
+  console.log(data)
+
   return (
     <div className='bg-white w-full p-4 rounded-md'>
       {isLoading ? <SkeletonAbout /> :
@@ -16,17 +18,17 @@ const About = () => {
           <Avatar width='60' height='61' />
           <div>
             <div>
-               <div className='text-lg capitalize'>{(bio?.first_name && bio?.last_name) || "Jane Doe"}</div>
-            <div className='font-light text-sm text-basegray capitalize'>{bio?.profession || "Frontend Engineer"}</div>
+               <div className='text-lg capitalize'>{(bio?.first_name && bio?.last_name)}</div>
+            <div className='font-light text-sm text-basegray capitalize'>{bio?.profession}</div>
               </div>
             <div className='mt-2'>
               <div className='text-lg'>ADDRESS</div>
-              <div className='font-light text-sm text-basegray capitalize'>{(([bio?.street, bio?.city, bio?.state, bio?.country])?.join(", ")) || ("10 deji odunuga str, lagos Nigeria")}</div>
+              <div className='font-light text-sm text-basegray capitalize'>{(([bio?.street, bio?.city, bio?.state, bio?.country])?.join(", "))}</div>
             </div>
             <div className='mt-2'>
               <div className='text-lg'>Bio</div>
               <div className='font-light text-sm text-basegray capitalize'>
-                {bio?.bio || "I'm frontend engineer with 2years experience in reactjs and nodejs"}
+                {bio?.bio}
               </div>
             </div>
           </div>

@@ -1,3 +1,7 @@
+import { getAuthUser } from ".";
+
+const token:string = getAuthUser();
+
 export const mutationApi = (
     url: string,
     method: string,
@@ -10,7 +14,7 @@ export const mutationApi = (
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
-        // authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
     });
 
     const request = new Request(url, {

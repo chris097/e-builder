@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import routes from './routes';
 import { NavProvider } from './context/navContext';
 import './App.css';
+import { AuthProvider } from './context/authContext';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   ));
 
   return (
+    <AuthProvider>
     <NavProvider>
       <Suspense fallback={<div>Loading...</div>}>
       <Toaster position="top-center" />
@@ -26,7 +28,8 @@ function App() {
         </Routes>
        </Router>
     </Suspense>
-    </NavProvider>
+      </NavProvider>
+      </AuthProvider>
   );
 }
 
