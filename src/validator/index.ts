@@ -24,4 +24,15 @@ export const workHistorySchema = yup.object().shape({
     country: yup.string().required(),
     start_date: yup.string().required(),
     end_date: yup.string()
-})
+});
+
+export const loginSchema = yup.object().shape({
+    email: yup.string().email().required("email is required").trim(),
+    password: yup.string().required("password is required."),
+});
+
+export const registerSchema = yup.object().shape({
+    fullName: yup.string().required("fullName is required."),
+    email: yup.string().email().trim().required("email is required"),
+    password: yup.string().required('password is required.')
+});

@@ -20,8 +20,8 @@ const Sidebar = () => {
           <div className='border-b py-4 w-full px-6 text-basegray'>Personal Information</div>
           <div className='mt-6 text-sm px-6 text-basegray'>RESUME SECTION</div>
           <div className='mt-4 flex px-6 flex-col space-y-3'>
-            {navLinks.map((navLink) => (
-             <Link to={navLink.to} className='text-sm  font-light hover:text-red-500 cursor-pointer flex items-center space-x-2'>
+            {navLinks.map((navLink, index) => (
+             <Link to={navLink.to} key={index} className='text-sm  font-light hover:text-red-500 cursor-pointer flex items-center space-x-2'>
                     <div className='flex mt-3 items-center gap-3'>
                         <div>{navLink.icon}</div>
                 <div>{navLink.name}</div>

@@ -7,7 +7,8 @@ import { SkeletonWorkHistory } from '../skeletonLoader';
 
 const WorkHistory = () => {
   const { data, isLoading } = useQueryApi([CONSTANT_TEXT.GET_WORK_HISTORY], apiUrls.WORK_HISTORY);
-  const works:[] = data?.data;
+  const works: [] = data?.data;
+
 
   return (
     <div className='flex-1 bg-white rounded-md h-auto px-6 pt-7 pb-0.5'>
